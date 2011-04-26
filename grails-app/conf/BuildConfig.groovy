@@ -27,6 +27,7 @@ grails.project.dependency.resolution = {
 
 	plugins {
 		compile ':tomcat:1.3.7'
+		compileTest ':spock:0.5-groovy-1.7'
 	}
 
     dependencies {

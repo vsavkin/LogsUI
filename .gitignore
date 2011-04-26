@@ -6,3 +6,4 @@
 *.settings
 *.classpath
 target
+out
