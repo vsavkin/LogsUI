@@ -1,6 +1,7 @@
 package com.victorsavkin.logviewer.domain.extractor
 
 import spock.lang.Specification
+import com.victorsavkin.logviewer.domain.PositionInLine
 
 class ContainsTextExtractorSpec extends Specification {
 
@@ -13,8 +14,9 @@ class ContainsTextExtractorSpec extends Specification {
 
 		where:
 		LINE                | RESULT
-		'dont have secrets' | 'secret'
-		'another line'      | null
-		''                  | null
+		'secret'            | new ExtractResult('secret', new PositionInLine(0, 6))
+		'dont have secrets' | new ExtractResult('secret', new PositionInLine(10, 16))
+		'another line'      | EmptyExtractResult.instance
+		''                  | EmptyExtractResult.instance
 	}
 }

@@ -8,7 +8,7 @@ class DateTypeSpec extends Specification {
 
 	def 'should parse a date based on a pattern'(){
 		setup:
-		def type = new DateType(format: 'yyyy-mm-dd')
+		def type = new DateType('yyyy-mm-dd')
 		def format = new SimpleDateFormat('yyyy-mm-dd')
 
 		expect:
@@ -17,7 +17,7 @@ class DateTypeSpec extends Specification {
 
 	def 'should tell if type is applicable to a string'(){
 		setup:
-		def type = new DateType(format: 'yyyy-mm-dd')
+		def type = new DateType('yyyy-mm-dd')
 
 		expect:
 		type.isApplicable(STR) == RESULT

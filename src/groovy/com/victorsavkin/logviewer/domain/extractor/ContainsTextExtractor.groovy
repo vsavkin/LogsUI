@@ -1,9 +1,22 @@
 package com.victorsavkin.logviewer.domain.extractor
 
-class ContainsTextExtractor extends TextExtractor{
+import com.victorsavkin.logviewer.domain.PositionInLine
+
+class ContainsTextExtractor extends TextExtractor {
+
 	String substring
 
-	String extract(String line){
-		line.contains(substring) ? substring : null
+	ExtractResult extract(String line){
+        def index = line.indexOf(substring)
+        if(index > -1){
+            createExtractResult index
+        } else {
+            EmptyExtractResult.instance
+        }
 	}
+
+    private createExtractResult(index) {
+        def position = new PositionInLine(index, index + substring.size())
+        new ExtractResult(substring, position)
+    }
 }

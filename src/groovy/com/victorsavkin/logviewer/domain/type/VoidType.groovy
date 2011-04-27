@@ -1,7 +1,10 @@
 package com.victorsavkin.logviewer.domain.type
 
-class VoidType extends Type<Void>{
+class VoidType extends Type<String>{
 
-	Void parse(String s) {
+	String parse(String s) {
+        if(s == null)
+            throw new NullPointerException()
+        ''
 	}
 }
