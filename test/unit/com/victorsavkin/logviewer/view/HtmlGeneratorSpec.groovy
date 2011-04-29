@@ -1,9 +1,7 @@
 package com.victorsavkin.logviewer.view
 
 import spock.lang.Specification
-import com.victorsavkin.logviewer.domain.Line
-import com.victorsavkin.logviewer.domain.variable.Variable
-import static com.victorsavkin.logviewer.domain.LineBuilder.*
+import static com.victorsavkin.logviewer.domain.LineBuilder.line
 
 class HtmlGeneratorSpec extends Specification {
 

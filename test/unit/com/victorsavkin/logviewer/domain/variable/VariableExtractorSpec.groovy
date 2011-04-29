@@ -1,11 +1,10 @@
 package com.victorsavkin.logviewer.domain.variable
 
-import spock.lang.Specification
-
-import com.victorsavkin.logviewer.domain.extractor.ContainsTextExtractor
-import com.victorsavkin.logviewer.domain.type.StringType
-import com.victorsavkin.logviewer.domain.type.NumericType
 import com.victorsavkin.logviewer.domain.PositionInLine
+import com.victorsavkin.logviewer.domain.extractor.ContainsTextExtractor
+import com.victorsavkin.logviewer.domain.type.NumericType
+import com.victorsavkin.logviewer.domain.type.StringType
+import spock.lang.Specification
 
 class VariableExtractorSpec extends Specification {
 

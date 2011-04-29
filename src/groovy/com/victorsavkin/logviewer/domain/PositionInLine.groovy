@@ -14,6 +14,11 @@ class PositionInLine {
         start == o.start && end == o.end
     }
 
+    int hashCode() {
+        int result = start
+        31 * result + end
+    }
+
     String toString() {
         "PositionInLine(${start}, ${end})"
     }

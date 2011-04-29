@@ -1,8 +1,8 @@
 package com.victorsavkin.logviewer.view
 
-import com.victorsavkin.logviewer.domain.variable.Variable
 import com.victorsavkin.logviewer.domain.Line
 import com.victorsavkin.logviewer.domain.PositionAdjustmentManager
+import com.victorsavkin.logviewer.domain.variable.Variable
 
 class HtmlGenerator {
 

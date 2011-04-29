@@ -1,7 +1,7 @@
 package com.victorsavkin.logviewer.domain.variable
 
-import com.victorsavkin.logviewer.domain.type.Type
 import com.victorsavkin.logviewer.domain.PositionInLine
+import com.victorsavkin.logviewer.domain.type.Type
 
 class Variable {
 	final Type type

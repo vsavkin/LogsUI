@@ -1,6 +1,7 @@
 package com.victorsavkin.logviewer.domain.type
 
 import spock.lang.Specification
+import com.victorsavkin.logviewer.domain.ParsingException
 
 class StringTypeSpec extends Specification {
 
@@ -20,6 +21,6 @@ class StringTypeSpec extends Specification {
         type.parse(null)
 
         then:
-        thrown(NullPointerException)
+        thrown(ParsingException)
     }
 }

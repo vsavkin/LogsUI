@@ -1,10 +1,12 @@
 package com.victorsavkin.logviewer.domain.type
 
+import com.victorsavkin.logviewer.domain.ParsingException
+
 class StringType extends Type<String> {
 
 	String parse(String s) {
         if(s == null)
-            throw new NullPointerException()
+            throw new ParsingException("Invalid parameter `${s}`")
 		s
 	}
 }

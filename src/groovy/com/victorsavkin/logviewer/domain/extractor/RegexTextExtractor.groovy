@@ -1,8 +1,7 @@
 package com.victorsavkin.logviewer.domain.extractor
 
-import java.util.regex.Pattern
-import java.util.regex.Matcher
 import com.victorsavkin.logviewer.domain.PositionInLine
+import java.util.regex.Pattern
 
 class RegexTextExtractor extends TextExtractor{
 

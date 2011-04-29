@@ -11,7 +11,7 @@ class DateType extends Type<Date>{
     }
 
     Date parse(String s) {
-		def f = new SimpleDateFormat(format)
+		def f = new SimpleDateFormat(format, Locale.default)
 		f.parse s
 	}
 }

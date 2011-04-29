@@ -1,9 +1,9 @@
 package com.victorsavkin.logviewer.domain
 
-import spock.lang.Specification
-import com.victorsavkin.logviewer.domain.variable.VariableExtractionRule
-import com.victorsavkin.logviewer.domain.type.DateType
 import com.victorsavkin.logviewer.domain.extractor.RegexTextExtractor
+import com.victorsavkin.logviewer.domain.type.DateType
+import com.victorsavkin.logviewer.domain.variable.VariableExtractionRule
+import spock.lang.Specification
 
 class TextParserSpec extends Specification {
 

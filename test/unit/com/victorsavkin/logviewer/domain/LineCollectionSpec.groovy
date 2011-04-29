@@ -1,7 +1,7 @@
 package com.victorsavkin.logviewer.domain
 
 import spock.lang.Specification
-import static com.victorsavkin.logviewer.domain.LineBuilder.*
+import static com.victorsavkin.logviewer.domain.LineBuilder.line
 
 class LineCollectionSpec extends Specification {
 

@@ -1,7 +1,7 @@
 package com.victorsavkin.logviewer.domain.extractor
 
-import spock.lang.Specification
 import com.victorsavkin.logviewer.domain.PositionInLine
+import spock.lang.Specification
 
 class ContainsTextExtractorSpec extends Specification {
 

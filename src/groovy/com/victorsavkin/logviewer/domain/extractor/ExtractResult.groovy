@@ -23,6 +23,12 @@ class ExtractResult {
         if (!(o instanceof ExtractResult)) return false
         text == o.text && position == o.position
     }
+
+
+    int hashCode() {
+        int result = (text != null ? text.hashCode() : 0)
+        31 * result + (position != null ? position.hashCode() : 0)
+    }
 }
 
 @Singleton

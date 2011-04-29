@@ -1,10 +1,10 @@
 package com.victorsavkin.logviewer.domain
 
-import com.victorsavkin.logviewer.domain.variable.Variable
-import com.victorsavkin.logviewer.domain.type.StringType
-import com.victorsavkin.logviewer.domain.type.NumericType
-import com.victorsavkin.logviewer.domain.type.VoidType
 import com.victorsavkin.logviewer.domain.type.DateType
+import com.victorsavkin.logviewer.domain.type.NumericType
+import com.victorsavkin.logviewer.domain.type.StringType
+import com.victorsavkin.logviewer.domain.type.VoidType
+import com.victorsavkin.logviewer.domain.variable.Variable
 
 class LineBuilder {
     private String text

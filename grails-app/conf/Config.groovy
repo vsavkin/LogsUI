@@ -88,3 +88,10 @@ log4j = {
 
     warn   'org.mortbay.log'
 }
+
+codenarc.reports = {
+    HtmlReport('html') {
+        outputFile = 'target/CodeNarc-Report.html'
+	    title = 'CodeNarc Report'
+    }
+}
