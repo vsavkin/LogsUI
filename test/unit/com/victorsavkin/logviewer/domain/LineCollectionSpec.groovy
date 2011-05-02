@@ -7,7 +7,7 @@ class LineCollectionSpec extends Specification {
 
     def 'should returned a collected filtered by a variable'(){
         setup:
-        def c = new LineCollection([
+        def c = new LineCollection('name', [
             line {
                 text '111'
                 var name: 'a', type: 'string', value: '1', from: 0, to: 3
@@ -41,7 +41,7 @@ class LineCollectionSpec extends Specification {
 
     def "should returned a collected filtered by variable's value"(){
         setup:
-        def c = new LineCollection([
+        def c = new LineCollection('name', [
             line {
                 text '111'
                 var name: 'a', type: 'string', value: '1', from: 0, to: 3

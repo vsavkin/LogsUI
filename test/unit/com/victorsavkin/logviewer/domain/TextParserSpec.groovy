@@ -14,7 +14,7 @@ class TextParserSpec extends Specification {
         def r = new VariableExtractionRule(varName: 'date', type: new DateType('yyyy-MM-dd'), textExtractor: e)
 
         when:
-        def lines = p.parse(TEXT, [r]).lines
+        def lines = p.parse(FILENAME, TEXT, [r]).lines
 
         then:
         lines.size() == 3
@@ -28,6 +28,7 @@ class TextParserSpec extends Specification {
         lines[2].variables.empty == true
 
         where:
+        FILENAME = 'myfile'
         TEXT = '''
         server1|2010-01-01|description1
         server2|2010-02-02|description2

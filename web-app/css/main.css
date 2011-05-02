@@ -14,7 +14,8 @@ html * {
 body {
     background: #fff;
     color: #333;
-    font: 11px verdana, arial, helvetica, sans-serif;
+    font: 13px verdana, arial, helvetica, sans-serif;
+    padding: 10px;
 }
 #grailsLogo {
 	padding:20px;
@@ -270,4 +271,31 @@ th.desc a {
 .buttons input.save {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
+}
+
+
+/* Log File */
+.lineCollection {
+    border: 1px solid #e6e6fa;
+    padding: 5px;
+}
+
+.lineCollectionName {
+    font: 16px bolder;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #add8e6;
+}
+
+.evenLine {
+    padding: 2px;
+    background-color: #dddddd;
+}
+
+.oddLine {
+    padding: 2px;
+}
+
+.variable {
+    background: #afeeee;
 }

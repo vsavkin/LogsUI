@@ -33,6 +33,6 @@ class LineBuilder {
             case 'void': return new VoidType()
             default: return new DateType(type)
         }
-        assert false, "Invalid type ${type}"
+        throw new RuntimeException("Invalid type ${type}")
     }
 }

@@ -15,4 +15,17 @@ class Variable {
         this.value = value
         this.position = position
     }
+
+
+    boolean equals(o) {
+        if (!(o instanceof Variable)) return false
+        name == o.name && type == o.type && value == o.value && position == o.position
+    }
+
+    int hashCode() {
+        int result = (type != null ? type.hashCode() : 0)
+        result = 31 * result + (name != null ? name.hashCode() : 0)
+        result = 31 * result + (value != null ? value.hashCode() : 0)
+        31 * result + (position != null ? position.hashCode() : 0)
+    }
 }

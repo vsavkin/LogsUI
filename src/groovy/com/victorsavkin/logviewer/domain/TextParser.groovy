@@ -7,12 +7,12 @@ class TextParser {
 
     VariableExtractor extractor = new VariableExtractor()
 
-    LineCollection parse(String text, List<VariableExtractionRule> rules){
+    LineCollection parse(String filename, String text, List<VariableExtractionRule> rules){
         def lines = []
         text.eachLine {
             lines << createLine(it, rules)
         }
-        new LineCollection(lines)
+        new LineCollection(filename, lines)
     }
 
     private createLine(line, rules) {

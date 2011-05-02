@@ -10,4 +10,15 @@ class Line {
         this.text = text
         this.variables = variables
     }
+
+
+    boolean equals(o) {
+        if (!(o instanceof Line)) return false
+        text == o.text && variables == o.variables
+    }
+
+    int hashCode() {
+        int result = (text != null ? text.hashCode() : 0)
+        31 * result + (variables != null ? variables.hashCode() : 0)
+    }
 }

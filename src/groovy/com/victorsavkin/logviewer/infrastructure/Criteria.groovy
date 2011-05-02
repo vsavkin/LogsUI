@@ -1,5 +1,7 @@
 package com.victorsavkin.logviewer.infrastructure
 
+import java.util.regex.Pattern
+
 class Criteria {
-	String filename
+	Pattern filename
 }

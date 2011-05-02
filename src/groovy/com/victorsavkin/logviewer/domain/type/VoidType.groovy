@@ -9,4 +9,8 @@ class VoidType extends Type<String>{
             throw new ParsingException("Invalid parameter `${s}`")
         ''
 	}
+
+    boolean equals(o){
+        o instanceof VoidType
+    }
 }

@@ -9,4 +9,8 @@ class StringType extends Type<String> {
             throw new ParsingException("Invalid parameter `${s}`")
 		s
 	}
+
+    boolean equals(o){
+        o instanceof StringType
+    }
 }

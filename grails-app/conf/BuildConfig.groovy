@@ -29,6 +29,7 @@ grails.project.dependency.resolution = {
 		compile ':tomcat:1.3.7'
 		compileTest ':spock:0.5-groovy-1.7'
 		compile ':codenarc:0.12'
+        runtime ':mongodb:1.0-M5'
 	}
 
     dependencies {
