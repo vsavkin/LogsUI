@@ -1,7 +1,8 @@
-package com.victorsavkin.logviewer.domain
+package com.victorsavkin.logviewer.line
 
 import spock.lang.Specification
-import static com.victorsavkin.logviewer.domain.LineBuilder.line
+import static com.victorsavkin.logviewer.domain.line.LineBuilder.line
+import com.victorsavkin.logviewer.domain.line.LineCollection
 
 class LineCollectionSpec extends Specification {
 
@@ -10,22 +11,22 @@ class LineCollectionSpec extends Specification {
         def c = new LineCollection('name', [
             line {
                 text '111'
-                var name: 'a', type: 'string', value: '1', from: 0, to: 3
+                field name: 'a', type: 'string', value: '1', from: 0, to: 3
             },
 
             line {
                 text '222'
-                var name: 'b', type: 'string', value: '2', from: 0, to: 3
+                field name: 'b', type: 'string', value: '2', from: 0, to: 3
             },
 
             line {
                 text '333'
-                var name: 'a', type: 'string', value: '1', from: 0, to: 3
-                var name: 'b', type: 'string', value: '2', from: 0, to: 3
+                field name: 'a', type: 'string', value: '1', from: 0, to: 3
+                field name: 'b', type: 'string', value: '2', from: 0, to: 3
             }])
 
         when:
-        def filtered = c.findAllWhereVarExist('a')
+        def filtered = c.findAllWhereFieldExist('a')
 
         then:
         filtered.lines.size() == 2
@@ -33,7 +34,7 @@ class LineCollectionSpec extends Specification {
         filtered.lines[1].text == '333'
 
         when:
-        filtered = c.findAllWhereVarExist('d')
+        filtered = c.findAllWhereFieldExist('d')
 
         then:
         filtered.lines.empty == true
@@ -44,22 +45,22 @@ class LineCollectionSpec extends Specification {
         def c = new LineCollection('name', [
             line {
                 text '111'
-                var name: 'a', type: 'string', value: '1', from: 0, to: 3
+                field name: 'a', type: 'string', value: '1', from: 0, to: 3
             },
 
             line {
                 text '222'
-                var name: 'b', type: 'string', value: '2', from: 0, to: 3
+                field name: 'b', type: 'string', value: '2', from: 0, to: 3
             },
 
             line {
                 text '333'
-                var name: 'a', type: 'string', value: '3', from: 0, to: 3
-                var name: 'b', type: 'string', value: '2', from: 0, to: 3
+                field name: 'a', type: 'string', value: '3', from: 0, to: 3
+                field name: 'b', type: 'string', value: '2', from: 0, to: 3
             }])
 
         when:
-        def filtered = c.findAllWhereVarEq('a', '3')
+        def filtered = c.findAllWhereFieldEq('a', '3')
 
         then:
         filtered.lines.size() == 1

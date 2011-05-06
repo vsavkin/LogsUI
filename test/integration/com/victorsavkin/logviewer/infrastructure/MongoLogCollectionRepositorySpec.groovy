@@ -1,10 +1,9 @@
 package com.victorsavkin.logviewer.infrastructure
 
 import grails.plugin.spock.IntegrationSpec
-import com.victorsavkin.logviewer.domain.LineCollection
-import static com.victorsavkin.logviewer.domain.LineBuilder.line
-import org.codehaus.groovy.grails.commons.DefaultGrailsApplication
-import com.mongodb.DBCollection
+import com.victorsavkin.logviewer.domain.line.LineCollection
+import static com.victorsavkin.logviewer.domain.line.LineBuilder.line
+
 import com.victorsavkin.logviewer.domain.type.DateType
 
 class MongoLogCollectionRepositorySpec extends IntegrationSpec {
@@ -51,7 +50,7 @@ class MongoLogCollectionRepositorySpec extends IntegrationSpec {
         repo.insert new LineCollection('aaa', [
             line {
                 text 'line1'
-                var name: 'var1', type: 'yyyy-mm-dd', value: '2010-01-01', from: 0, to: 1
+                field name: 'var1', type: 'yyyy-mm-dd', value: '2010-01-01', from: 0, to: 1
             },
             line {text 'line2'}
         ])
@@ -66,7 +65,7 @@ class MongoLogCollectionRepositorySpec extends IntegrationSpec {
         r.first().name == 'aaa'
         r.first().lines.text == ['line1', 'line2']
         def firstLine = r.first().lines.first()
-        firstLine.variables.first().name == 'var1'
-        (firstLine.variables.first().type instanceof DateType) == true
+        firstLine.fields.first().name == 'var1'
+        (firstLine.fields.first().type instanceof DateType) == true
     }
 }

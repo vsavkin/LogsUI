@@ -1,7 +1,7 @@
 package com.victorsavkin.logviewer.view
 
 import spock.lang.Specification
-import static com.victorsavkin.logviewer.domain.LineBuilder.line
+import static com.victorsavkin.logviewer.domain.line.LineBuilder.line
 
 class HtmlGeneratorSpec extends Specification {
 
@@ -19,18 +19,18 @@ class HtmlGeneratorSpec extends Specification {
         LINE << [
             line {
                 text 'aaabbbccc'
-                var name: 'a', type: 'string', value: 'aaa', from: 0, to: 3
+                field name: 'a', type: 'string', value: 'aaa', from: 0, to: 3
             },
 
             line {
                 text 'aaabbbccc'
-                var name: 'c', type: 'string', value: 'aaa', from: 6, to: 9
+                field name: 'c', type: 'string', value: 'aaa', from: 6, to: 9
             },
 
             line {
                 text 'aaabbbccc'
-                var name: 'a', type: 'string', value: 'aaa', from: 0, to: 3
-                var name: 'c', type: 'string', value: 'aaa', from: 6, to: 9
+                field name: 'a', type: 'string', value: 'aaa', from: 0, to: 3
+                field name: 'c', type: 'string', value: 'aaa', from: 6, to: 9
             },
 
             line {
@@ -39,9 +39,9 @@ class HtmlGeneratorSpec extends Specification {
         ]
 
         GENHTML << [
-            '<span class="variable">aaa</span>bbbccc',
-            'aaabbb<span class="variable">ccc</span>',
-            '<span class="variable">aaa</span>bbb<span class="variable">ccc</span>',
+            '<span class="field">aaa</span>bbbccc',
+            'aaabbb<span class="field">ccc</span>',
+            '<span class="field">aaa</span>bbb<span class="field">ccc</span>',
             'aaabbbccc'
         ]
     }

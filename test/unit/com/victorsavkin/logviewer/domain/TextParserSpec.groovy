@@ -2,7 +2,7 @@ package com.victorsavkin.logviewer.domain
 
 import com.victorsavkin.logviewer.domain.extractor.RegexTextExtractor
 import com.victorsavkin.logviewer.domain.type.DateType
-import com.victorsavkin.logviewer.domain.variable.VariableExtractionRule
+import com.victorsavkin.logviewer.domain.field.FieldExtractionRule
 import spock.lang.Specification
 
 class TextParserSpec extends Specification {
@@ -11,21 +11,21 @@ class TextParserSpec extends Specification {
         setup:
         def p = new TextParser()
         def e = new RegexTextExtractor(pattern: /\d\d\d\d-\d\d-\d\d/)
-        def r = new VariableExtractionRule(varName: 'date', type: new DateType('yyyy-MM-dd'), textExtractor: e)
+        def r = new FieldExtractionRule(fieldName: 'date', type: new DateType('yyyy-MM-dd'), textExtractor: e)
 
         when:
         def lines = p.parse(FILENAME, TEXT, [r]).lines
 
         then:
         lines.size() == 3
-        lines[0].variables.size() == 1
-        def v0 = lines[0].variables[0]
+        lines[0].fields.size() == 1
+        def v0 = lines[0].fields[0]
         v0.type instanceof DateType
         v0.value == '2010-01-01'
 
-        lines[1].variables[0].value == '2010-02-02'
+        lines[1].fields[0].value == '2010-02-02'
 
-        lines[2].variables.empty == true
+        lines[2].fields.empty == true
 
         where:
         FILENAME = 'myfile'

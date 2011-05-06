@@ -1,29 +1,29 @@
 package com.victorsavkin.logviewer.view
 
-import com.victorsavkin.logviewer.domain.Line
+import com.victorsavkin.logviewer.domain.line.Line
 import com.victorsavkin.logviewer.domain.PositionAdjustmentManager
-import com.victorsavkin.logviewer.domain.variable.Variable
+import com.victorsavkin.logviewer.domain.field.Field
 
 class HtmlGenerator {
 
     String generateHtml(Line line){
         def res = line.text
         def m = new PositionAdjustmentManager(res.size())
-        line.variables.each {
-            res = highlightVariable(m, it, res)
+        line.fields.each {
+            res = highlightField(m, it, res)
             adjustPositions m, it
         }
         res
     }
 
-    private adjustPositions(PositionAdjustmentManager m, Variable var) {
-        m.insert var.position.start, spanOpenTag.size()
-        m.insert var.position.end, spanCloseTag.size()
+    private adjustPositions(PositionAdjustmentManager m, Field field) {
+        m.insert field.position.start, spanOpenTag.size()
+        m.insert field.position.end, spanCloseTag.size()
     }
 
-    private highlightVariable(PositionAdjustmentManager m, Variable var, String line) {
-        def s = m.getAdjustedPosition(var.position.start)
-        def e = m.getAdjustedPosition(var.position.end - 1) + 1
+    private highlightField(PositionAdjustmentManager m, Field field, String line) {
+        def s = m.getAdjustedPosition(field.position.start)
+        def e = m.getAdjustedPosition(field.position.end - 1) + 1
         insertSpan line, s, e
     }
 
@@ -35,7 +35,7 @@ class HtmlGenerator {
     }
 
     private getSpanOpenTag() {
-        '<span class="variable">'
+        '<span class="field">'
     }
 
     private getSpanCloseTag() {

@@ -1,8 +1,11 @@
-package com.victorsavkin.logviewer.domain
+package com.victorsavkin.logviewer.line
 
 import spock.lang.Specification
-import com.victorsavkin.logviewer.domain.variable.Variable
+import com.victorsavkin.logviewer.domain.field.Field
 import com.victorsavkin.logviewer.domain.type.StringType
+import com.victorsavkin.logviewer.domain.line.Line
+import com.victorsavkin.logviewer.domain.line.LineSerializer
+import com.victorsavkin.logviewer.domain.PositionInLine
 
 class LineSerializerSpec extends Specification {
 
@@ -15,6 +18,6 @@ class LineSerializerSpec extends Specification {
 
         where:
         COLNAME = 'mycollection'
-        LINE = new Line('some text', [new Variable('a', 'b', new StringType(), new PositionInLine(0,5))])
+        LINE = new Line('some text', [new Field('a', 'b', new StringType(), new PositionInLine(0,5))])
     }
 }
