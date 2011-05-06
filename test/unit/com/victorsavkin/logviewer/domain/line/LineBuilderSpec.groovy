@@ -1,4 +1,4 @@
-package com.victorsavkin.logviewer.line
+package com.victorsavkin.logviewer.domain.line
 
 import com.victorsavkin.logviewer.domain.type.StringType
 import spock.lang.Specification

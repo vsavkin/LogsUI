@@ -6,7 +6,7 @@ import com.victorsavkin.logviewer.view.HtmlGenerator
 
 class LogFileController {
 
-    HtmlGenerator htmlGenerator = new HtmlGenerator()
+    HtmlGenerator htmlGenerator
 
     def index = {
         def lineCollection = new LineCollection([

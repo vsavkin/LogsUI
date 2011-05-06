@@ -1,4 +1,4 @@
-package com.victorsavkin.logviewer.line
+package com.victorsavkin.logviewer.domain.line
 
 import spock.lang.Specification
 import com.victorsavkin.logviewer.domain.line.DateBasedLineCollectionSyncStrategy
